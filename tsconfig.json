@@ -13,9 +13,9 @@
     "outDir": "./build",
     "composite": false,
     "removeComments": true,
-    "importHelpers": true,
-    "declaration": false,
-    "sourceMap": false,
+    "importHelpers": false,
+    "declaration": true,
+    "sourceMap": true,
 
     "strict": true,
     "alwaysStrict": true,
@@ -39,7 +39,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true
   }
 }
