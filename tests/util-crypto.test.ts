@@ -11,10 +11,10 @@ describe("Testing Hash Function", () => {
 
   for(const testCase of testCases) {
     test(`Case ${testCase.data}`, () => expect(
-        crypto.hash(
+      UtilCrypto.hash(
           testCase.data,
           testCase.algo,
-          testCase.dgst as _crypto.BinaryToTextEncoding
+          testCase.dgst as crypto.BinaryToTextEncoding
         )
       )
       .resolves
@@ -36,11 +36,11 @@ describe("Testing Sign Function", () => {
 
   for(const testCase of testCases) {
     test(`Case ${testCase.data}`, () => expect(
-        crypto.hmacSign(
+      UtilCrypto.hmacSign(
           testCase.data,
           testCase.skey,
           testCase.algo,
-          testCase.dgst as _crypto.BinaryToTextEncoding
+          testCase.dgst as crypto.BinaryToTextEncoding
         )
       )
       .resolves
