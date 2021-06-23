@@ -1,3 +1,7 @@
+import UtilCrypto from "../src/util-crypto";
+import crypto from "crypto";
+
+
 // All Test Cases expectation value gathered from sha256sum
 describe("Testing Hash Function", () => {
   const testCases = [
