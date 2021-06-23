@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.js .",
-    "test": "jest -v --watchAll --coverage .",
+    "test": "jest --verbose --watchAll --coverage .",
     "build": "rm -rf ./build/ && tsc --project .",
     "dev": "nodemon src/index.ts"
   },
