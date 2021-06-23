@@ -14,6 +14,8 @@ module.exports = {
     "@typescript-eslint/no-inferrable-types": "off",
   },
   ignorePatterns: [
+    "build/",
+    "build/**",
     "dist/",
     "dist/**",
     "node_modules/",
