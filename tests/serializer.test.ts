@@ -1,3 +1,5 @@
+import { PrimitiveSerializer } from "../src/serializer";
+
 describe("Testing Built-In PrimitiveSerializer", () => {
   const testCases = [
     {

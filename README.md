@@ -14,6 +14,7 @@ Inspired by [Palletes Project's **'ItsDangerous'**](https://itsdangerous.pallets
 - Fully Asynchronous
 - Customizeable Serializer
 - Came with Built-int Primitive Data Type Serializer
+- Typed, come with typescript declaration
 - Unit-Tested
 
 ## Installation
@@ -21,20 +22,29 @@ Inspired by [Palletes Project's **'ItsDangerous'**](https://itsdangerous.pallets
 ```bash
 npm install isitsave
 ```
-### Yarn
-> Coming Soon
+#### Typescript
+For Typescript user, this module came with it's own declaration stub file, you don't need to install `@types/isitsave`
 
 ## Example
+### Basic
 ```typescript
 import { createPrimitiveSigner } from "isitsave"
 
+const originalData = { example: "data", like: [ "an array" ], or: 3 };
+console.log("Original Data:", originalData);
 const signer = createPrimitiveSigner("secret_key");
 signer
-  .dump({ example: "data", like: [ "an array" ], or: 3 })
+  .dump(originalData)
   .then(async signedData => {
-    console.log(signedData);
+    console.log("Signed:", signedData);
 
     const loaded = await signer.load(signedData);
-    console.log(loaded)
-  })
+    console.log("Loaded:", loaded)
+  });
+```
+
+```text
+Original Data: { example: 'data', like: [ 'an array' ], or: 3 }
+Signed: ZXlKbGVHRnRjR3hsSWpvaVpHRjBZU0lzSW14cGEyVWlPbHNpWVc0Z1lYSnlZWGtpWFN3aWIzSWlPak45LjZITUEwdzlPdERZSHdlRmIwVFBvVmhObzZZeUx1Ykd6RjNLRDhYNGNmRXBoOWZ2TEgxSG41ZWdnTDFIaUZoUlBlNVpQOHBmQUw3UUlqK2tlU3g5QjRnPT0uQVYwTjgvZUR4elpJa1RZbWlvTHZQRFJuVHB0ejlENnE3ZnRJK1NYbkJPOW1vdktDdHE2YUoxb284T1FPRHQvSGJqSXRGMWl2L2tuZ0F3WGFVM0t0WFE9PQ==
+Loaded: { example: 'data', like: [ 'an array' ], or: 3 }
 ```
